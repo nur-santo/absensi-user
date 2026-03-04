@@ -31,10 +31,8 @@ class _FaceCapturePageState extends State<FaceCapturePage> {
           final image = img.decodeImage(bytes)!;
           final embedding = FaceEmbedding.generate(image);
 
-          // Simpan embedding
           await WajahService.store(embedding);
 
-          // Navigasi aman
           if (!mounted) return;
           Navigator.pushReplacementNamed(context, '/');
         } catch (e) {

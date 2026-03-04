@@ -34,7 +34,6 @@ class FaceEmbedding {
     return Float32List.fromList(output[0]);
   }
 
-  /// Output shape: [1, 112, 112, 3]
   static Float32List _preprocess(img.Image image) {
     final resized = img.copyResize(image, width: 112, height: 112);
 
