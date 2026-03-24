@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:image/image.dart' as img;
 import '../face/face_camera_page.dart';
 import '../face/face_embedding.dart';
@@ -16,6 +17,20 @@ class _AbsenPageState extends State<AbsenPage> {
   bool _processing = false;
 
   @override
+  void initState() {
+    super.initState();
+    // Fullscreen saat masuk halaman ini
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+  }
+
+  @override
+  void dispose() {
+    // Kembalikan system UI saat keluar
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return FaceCameraPage(
       onCapture: (file) async {
@@ -23,15 +38,12 @@ class _AbsenPageState extends State<AbsenPage> {
         _processing = true;
 
         try {
-          // Load TFLite model
           await FaceEmbedding.loadModel();
 
-          // Decode image & generate embedding
           final bytes = await File(file.path).readAsBytes();
           final image = img.decodeImage(bytes)!;
           final embedding = FaceEmbedding.generate(image);
 
-          // Simpan data absen
           await KehadiranService.absenMasuk(embedding);
 
           if (!mounted) return;

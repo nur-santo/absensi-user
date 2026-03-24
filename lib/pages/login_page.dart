@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
       error = null;
     });
 
-    final success = await AuthService.login(
+  final success = await AuthService.login(
   emailCtrl.text.trim(),
   passCtrl.text.trim(),
 );

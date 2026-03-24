@@ -13,7 +13,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await dotenv.load(fileName: ".env");
-
   runApp(const MyApp());
 }
 
@@ -24,15 +23,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       initialRoute: '/',
-
       routes: {
         '/': (_) => const SplashPage(),
         '/login': (_) => const LoginPage(),
         '/face-capture': (_) => const FaceCapturePage(),
         '/absen': (_) => const AbsenPage(),
-        '/perizinan': (_) => const PerizinanPage(),
+        '/perizinan': (_) => const HistoryPerizinanPage(),
         '/perizinan/create': (_) => const PerizinanCreatePage(),
         '/kehadiran': (_) => const HistoryKehadiranPage(),
       },

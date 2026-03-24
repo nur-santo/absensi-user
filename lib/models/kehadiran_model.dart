@@ -7,6 +7,7 @@ class Kehadiran {
   final DateTime tanggal;
   final String status;
   final bool terlambat;
+  final int? menitTelat; // ← baru
   final String? keterlambatan;
 
   Kehadiran({
@@ -18,6 +19,7 @@ class Kehadiran {
     required this.tanggal,
     required this.status,
     required this.terlambat,
+    this.menitTelat, // ← baru
     this.keterlambatan,
   });
 
@@ -31,6 +33,7 @@ class Kehadiran {
       tanggal: DateTime.parse(json['tanggal']).toLocal(),
       status: json['status'],
       terlambat: json['terlambat'] == true || json['terlambat'] == 1,
+      menitTelat: json['menit_telat'], // ← baru
       keterlambatan: json['keterlambatan'],
     );
   }

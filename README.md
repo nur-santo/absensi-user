@@ -1,17 +1,128 @@
-# absensi_user
+# App Absensi
 
-A new Flutter project.
+# Aplikasi Absensi Karyawan
 
-## Getting Started
+Aplikasi client untuk sistem absensi karyawan yang terhubung dengan backend API.  
+Digunakan oleh karyawan untuk melakukan absensi, pengajuan izin, dan melihat riwayat.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## Deskripsi
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Aplikasi ini memungkinkan karyawan untuk:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# projekabsensi_user
+- Melakukan absensi dengan wajah atau foto
+- Mengajukan izin / cuti
+- Melihat riwayat absensi
+- Melihat status pengajuan izin
+
+---
+
+## Tampilah Utama
+
+![home](img/home)
+
+---
+
+## Fitur Utama
+
+### Login
+
+- Login menggunakan akun yang terdaftar
+
+---
+
+### Absensi
+
+- Absen masuk menggunakan:
+  - Face capture (kamera)
+  - Foto manual
+- Validasi wajah ke server
+- Deteksi:
+  - Keterlambatan
+  - Shift
+  - Mode kerja (WFO/WFH)
+
+#### Tampilan Absensi
+
+![Absen](img/absen.png)
+
+---
+
+### Perizinan
+
+- Pengajuan:
+  - Izin
+  - Sakit
+  - Cuti
+- Input tanggal & keterangan
+- Upload bukti (opsional)
+
+#### Tampilan Perizinan
+
+![Perizinan](img/perizinan.png)
+
+---
+
+### History Absensi
+
+- List riwayat absensi harian
+- Informasi:
+  - Tanggal
+  - Status
+  - Jam masuk
+  - Keterlambatan
+
+#### Tampilan History Absensi
+
+![History Absensi](img/history-absen.png)
+
+---
+
+### History Perizinan
+
+- Riwayat pengajuan izin
+- Status:
+  - Pending
+  - Disetujui
+  - Ditolak
+
+#### Tampilan History Perizinan
+
+![History Perizinan](img/history-izin.png)
+
+---
+
+## Teknologi
+
+- Flutter / Web App (sesuaikan dengan project kamu)
+- REST API
+- Camera Integration
+- Face Recognition API
+
+---
+
+## Alur Sistem
+
+1. User login
+2. User melakukan absensi (face/photo)
+3. Data dikirim ke backend
+4. Backend validasi wajah
+5. Data absensi disimpan
+6. User dapat melihat riwayat
+
+---
+
+## Kelebihan Sistem
+
+- Absensi lebih akurat (face recognition)
+- Mendukung WFO & WFH
+- Monitoring real-time oleh admin
+- Terintegrasi API
+
+---
+
+## Catatan
+
+- Membutuhkan koneksi internet
+- Kamera diperlukan untuk fitur face recognition
