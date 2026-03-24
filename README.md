@@ -20,7 +20,7 @@ Aplikasi ini memungkinkan karyawan untuk:
 
 ## Tampilah Utama
 
-![home](img/home)
+![home](img/home.jpg)
 
 ---
 
@@ -43,10 +43,6 @@ Aplikasi ini memungkinkan karyawan untuk:
   - Shift
   - Mode kerja (WFO/WFH)
 
-#### Tampilan Absensi
-
-![Absen](img/absen.png)
-
 ---
 
 ### Perizinan
@@ -60,7 +56,7 @@ Aplikasi ini memungkinkan karyawan untuk:
 
 #### Tampilan Perizinan
 
-![Perizinan](img/perizinan.png)
+![Perizinan](img/buat_perizinan.jpg)
 
 ---
 
@@ -75,7 +71,7 @@ Aplikasi ini memungkinkan karyawan untuk:
 
 #### Tampilan History Absensi
 
-![History Absensi](img/history-absen.png)
+![History Absensi](img/kehadiran.jpg)
 
 ---
 
@@ -89,13 +85,13 @@ Aplikasi ini memungkinkan karyawan untuk:
 
 #### Tampilan History Perizinan
 
-![History Perizinan](img/history-izin.png)
+![History Perizinan](img/perizinan.jpg)
 
 ---
 
 ## Teknologi
 
-- Flutter / Web App (sesuaikan dengan project kamu)
+- Flutter
 - REST API
 - Camera Integration
 - Face Recognition API
