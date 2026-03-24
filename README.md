@@ -122,3 +122,5 @@ Aplikasi ini memungkinkan karyawan untuk:
 
 - Membutuhkan koneksi internet
 - Kamera diperlukan untuk fitur face recognition
+
+[Admin Panel](https://github.com/nur-santo/absensi-admin)
