@@ -18,9 +18,9 @@ Aplikasi ini memungkinkan karyawan untuk:
 
 ---
 
-## Tampilah Utama
+## Tampilan Utama
 
-![home](img/home.jpg)
+![Home](img/home.jpg)
 
 ---
 
@@ -28,7 +28,7 @@ Aplikasi ini memungkinkan karyawan untuk:
 
 ### Login
 
-- Login menggunakan akun yang terdaftar
+- Login menggunakan akun yang terdaftar.
 
 ---
 
@@ -51,7 +51,7 @@ Aplikasi ini memungkinkan karyawan untuk:
   - Izin
   - Sakit
   - Cuti
-- Input tanggal & keterangan
+- Input tanggal dan keterangan
 - Upload bukti (opsional)
 
 #### Tampilan Perizinan
@@ -62,8 +62,8 @@ Aplikasi ini memungkinkan karyawan untuk:
 
 ### History Absensi
 
-- List riwayat absensi harian
-- Informasi:
+- Melihat riwayat absensi harian
+- Informasi yang ditampilkan:
   - Tanggal
   - Status
   - Jam masuk
@@ -77,8 +77,8 @@ Aplikasi ini memungkinkan karyawan untuk:
 
 ### History Perizinan
 
-- Riwayat pengajuan izin
-- Status:
+- Melihat riwayat pengajuan izin
+- Status pengajuan:
   - Pending
   - Disetujui
   - Ditolak
@@ -92,35 +92,95 @@ Aplikasi ini memungkinkan karyawan untuk:
 ## Teknologi
 
 - Flutter
+- Dart
+- FVM (Flutter Version Management)
 - REST API
 - Camera Integration
 - Face Recognition API
 
 ---
 
+## Cara Menjalankan
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/nur-santo/absensi-user.git
+cd absensi-user
+```
+
+### 2. Install Dependency
+
+```bash
+fvm flutter pub get
+```
+
+### 3. Konfigurasi Environment
+
+Isi file `.env` dengan alamat backend.
+
+```env
+API_IP=192.168.1.10
+API_PORT=8000
+```
+
+Keterangan:
+
+- `API_IP` : Alamat IP server backend (Admin Panel Laravel).
+- `API_PORT` : Port backend, default `8000`.
+
+Contoh URL API yang akan digunakan aplikasi:
+
+```
+http://192.168.1.10:8000
+```
+
+> Pastikan perangkat mobile dan server berada pada jaringan yang sama saat pengembangan.
+
+### 4. Jalankan Aplikasi
+
+```bash
+fvm flutter run
+```
+
+Atau pilih device yang tersedia:
+
+```bash
+fvm flutter devices
+fvm flutter run
+```
+
+---
+
 ## Alur Sistem
 
-1. User login
-2. User melakukan absensi (face/photo)
-3. Data dikirim ke backend
-4. Backend validasi wajah
-5. Data absensi disimpan
-6. User dapat melihat riwayat
+1. User login.
+2. User melakukan absensi menggunakan kamera atau foto.
+3. Data dikirim ke backend melalui REST API.
+4. Backend melakukan validasi wajah.
+5. Data absensi disimpan.
+6. User dapat melihat riwayat absensi dan status pengajuan.
 
 ---
 
 ## Kelebihan Sistem
 
-- Absensi lebih akurat (face recognition)
-- Mendukung WFO & WFH
-- Monitoring real-time oleh admin
-- Terintegrasi API
+- Absensi lebih akurat menggunakan face recognition.
+- Mendukung mode kerja WFO dan WFH.
+- Monitoring kehadiran secara real-time oleh admin.
+- Terintegrasi dengan REST API.
 
 ---
 
 ## Catatan
 
-- Membutuhkan koneksi internet
-- Kamera diperlukan untuk fitur face recognition
+- Kamera diperlukan untuk fitur face recognition.
+- Pastikan `API_IP` pada file `.env` mengarah ke server backend yang sedang berjalan.
 
-[Admin Panel](https://github.com/nur-santo/absensi-admin)
+---
+
+## Admin Panel
+
+Repository backend (Admin Panel) dapat diakses di:
+
+https://github.com/nur-santo/absensi-admin
