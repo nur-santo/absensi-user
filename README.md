@@ -120,7 +120,7 @@ fvm flutter pub get
 Isi file `.env` dengan alamat backend.
 
 ```env
-API_IP=192.168.1.10
+API_IP=192.168.18.56
 API_PORT=8000
 ```
 
@@ -132,7 +132,7 @@ Keterangan:
 Contoh URL API yang akan digunakan aplikasi:
 
 ```
-http://192.168.1.10:8000
+http://192.168.18.56:8000
 ```
 
 > Pastikan perangkat mobile dan server berada pada jaringan yang sama saat pengembangan.
